@@ -1,6 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const KEY = import.meta.env.KEY
+const ID = import.meta.env.ID
+const TOTAL_RES=10
+const videos = await fetch('https://www.googleapis.com/youtube/v3/search?key='+KEY+'&channelId='+ID+'&part=snippet,id&order=date&maxResults='+TOTAL_RES)
+.then(resp=>resp.json()).then(data=>data.items)
 ---
 
 <Layout title="JexuxGG | Reseñas de Videojuegos">
+    <ul class="text-white grid grid-cols-3 gap-1">
+        {
+            videos.map((element:any) => 
+                <li class="border border-white">{element.snippet.title}</li>
+            )
+        }
+    </ul>
 </Layout>
