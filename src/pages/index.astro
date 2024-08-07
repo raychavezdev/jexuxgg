@@ -3,17 +3,38 @@ import Layout from '../layouts/Layout.astro';
 
 const KEY = import.meta.env.KEY
 const ID = import.meta.env.ID
-const TOTAL_RES=10
+const TOTAL_RES=9
 const videos = await fetch('https://www.googleapis.com/youtube/v3/search?key='+KEY+'&channelId='+ID+'&part=snippet,id&order=date&maxResults='+TOTAL_RES)
 .then(resp=>resp.json()).then(data=>data.items)
 ---
 
 <Layout title="JexuxGG | Reseñas de Videojuegos">
-    <ul class="text-white grid grid-cols-3 gap-1">
+
+
+    <h2 class="text-lg">Últimos videos</h2>
+    <ul class="text-white grid grid-cols-auto-fill gap-4">
         {
             videos.map((element:any) => 
-                <li class="border border-white">{element.snippet.title}</li>
+                <li class="flex flex-col items-center justify-center w-[360] border border-white" >
+                   <iframe class="w-full aspect-video border border-red-500"  src={"https://www.youtube.com/embed/" + element.id.videoId } title= {element.snippet.title}allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+                    
+              <div class=" text-center">
+                <h3 class="">
+                        {element.snippet.title}
+                    </h3>
+                    <p>
+                        {element.snippet.description}
+                    </p>
+                    <p>Publicado el: {element.snippet.publishTime}</p>
+              </div>
+
+                </li>
             )
         }
     </ul>
+
+
+    <script src="https://apis.google.com/js/platform.js"></script>
+
+    <div class="g-ytsubscribe" data-channelid="UCBoGhuGJ49FlvpegB7DQWjQ" data-layout="full" data-count="default"></div>
 </Layout>
