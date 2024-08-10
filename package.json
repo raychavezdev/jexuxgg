@@ -1,13 +1,14 @@
 {
   "name": "jexuxweb",
-  "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/check": "^0.9.1",
@@ -16,5 +17,20 @@
     "astro": "^4.12.3",
     "tailwindcss": "^3.4.7",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
+    "@typescript-eslint/parser": "^8.0.1",
+    "eslint": "8.*.*",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-astro": "^1.2.3",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^17.10.2",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-promise": "^7.1.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.6"
   }
 }

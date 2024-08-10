@@ -1,42 +1,43 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
 
 const KEY = import.meta.env.KEY
 const ID = import.meta.env.ID
-const TOTAL_RES=9
-const videos = await fetch('https://www.googleapis.com/youtube/v3/search?key='+KEY+'&channelId='+ID+'&part=snippet,id&order=date&maxResults='+TOTAL_RES)
-.then(resp=>resp.json()).then(data=>data.items)
+const TOTAL_RES = 9
+const videos = await fetch(
+  'https://www.googleapis.com/youtube/v3/search?key=' +
+    KEY +
+    '&channelId=' +
+    ID +
+    '&part=snippet,id&order=date&maxResults=' +
+    TOTAL_RES,
+)
+  .then((resp) => resp.json())
+  .then((data) => data.items)
 ---
+
 <script>
-import '@justinribeiro/lite-youtube';
+  import '@justinribeiro/lite-youtube'
 </script>
 
 <Layout title="JexuxGG | Reseñas de Videojuegos">
+  <h2 class="text-lg">Últimos videos</h2>
+  <ul class="grid grid-cols-auto-fill gap-4 text-white">
+    {
+      videos.map((element: any) => (
+        <li class="flex w-[360] flex-col items-center justify-center border border-white">
+          <lite-youtube videoid={element.id.videoId} />
+          <div class="text-center">
+            <h3 class="">{element.snippet.title}</h3>
+            <p>{element.snippet.description}</p>
+            <p>Publicado el: {element.snippet.publishTime}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
 
+  <script src="https://apis.google.com/js/platform.js"></script>
 
-    <h2 class="text-lg">Últimos videos</h2>
-    <ul class="text-white grid grid-cols-auto-fill gap-4">
-        {
-            videos.map((element:any) => 
-                <li class="flex flex-col items-center justify-center w-[360] border border-white" >
-                <lite-youtube videoid={element.id.videoId}></lite-youtube>            
-              <div class=" text-center">
-                <h3 class="">
-                        {element.snippet.title}
-                    </h3>
-                    <p>
-                        {element.snippet.description}
-                    </p>
-                    <p>Publicado el: {element.snippet.publishTime}</p>
-              </div>
-
-                </li>
-            )
-        }
-    </ul>
-
-
-    <script src="https://apis.google.com/js/platform.js"></script>
-
-    <div class="g-ytsubscribe" data-channelid="UCBoGhuGJ49FlvpegB7DQWjQ" data-layout="full" data-count="default"></div>
+  <div class="g-ytsubscribe" data-channelid="UCBoGhuGJ49FlvpegB7DQWjQ" data-layout="full" data-count="default"></div>
 </Layout>
