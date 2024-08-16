@@ -1,19 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
-
-const KEY = import.meta.env.KEY
-const ID = import.meta.env.ID
-const TOTAL_RES = 9
-const videos = await fetch(
-  'https://www.googleapis.com/youtube/v3/search?key=' +
-    KEY +
-    '&channelId=' +
-    ID +
-    '&part=snippet,id&order=date&maxResults=' +
-    TOTAL_RES,
-)
-  .then((resp) => resp.json())
-  .then((data) => data.items)
+import { fetchVideos } from '../utils/fetchVideos.js'
+const videos = await fetchVideos()
 ---
 
 <script>
