@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { fetchVideos } from '../utils/fetchVideos.js'
-const videos = await fetchVideos()
+// import { fetchVideos } from '../utils/fetchVideos.js'
+import { items } from '../utils/fetchVideosResult.js'
+const videos = items
 ---
 
 <script>

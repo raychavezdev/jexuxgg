@@ -14,7 +14,7 @@ export async function fetchVideos() {
     )
 
     if (!response.ok) {
-      throw new Error('Error fetching videos')
+      throw new Error('Error en la busqueda de videos')
     }
 
     const data = await response.json()
