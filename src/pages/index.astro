@@ -1,11 +1,14 @@
 ---
-import CardVideo from '../components/CardVideo.astro'
+import Hero from '../components/hero/Hero.astro'
+import Header from '../components/header/Header.astro'
+import Logo from '../components/header/Logo.astro'
 import Subtitle from '../components/Subtitle.astro'
+import GridVideos from '../components/videos/GridVideos.astro'
 import Video from '../icons/Video.astro'
+import Container from '../layouts/Container.astro'
 import Layout from '../layouts/Layout.astro'
+import Menu from '../components/menu/Menu.astro'
 // import { fetchVideos } from '../utils/fetchVideos.js'
-import { items } from '../utils/fetchVideosResult.js'
-const videos = items
 ---
 
 <script>
@@ -13,15 +16,17 @@ const videos = items
 </script>
 
 <Layout title="JexuxGG | Reseñas de Videojuegos">
-  <div class="mx-auto w-10/12">
-    <main>
+  <Header>
+    <Logo />
+    <Menu />
+  </Header>
+  <Hero />
+  <main>
+    <Container>
       <Subtitle><Video w="30" h="30" /> Últimos videos</Subtitle>
-      <ul class="grid grid-cols-auto-fill gap-4 text-white">
-        {videos.map((element: any) => <CardVideo video={element} />)}
-      </ul>
-    </main>
-  </div>
-
+      <GridVideos />
+    </Container>
+  </main>
   <script src="https://apis.google.com/js/platform.js"></script>
 
   <div class="g-ytsubscribe" data-channelid="UCBoGhuGJ49FlvpegB7DQWjQ" data-layout="full" data-count="default"></div>

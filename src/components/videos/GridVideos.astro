@@ -1,0 +1,9 @@
+---
+import { items } from '../../utils/fetchVideosResult.js'
+import CardVideo from './CardVideo.astro'
+const videos = items
+---
+
+<ul class="grid grid-cols-auto-fill gap-4">
+  {videos.map((element: any) => <CardVideo video={element} />)}
+</ul>
