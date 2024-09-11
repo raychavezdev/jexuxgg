@@ -2,9 +2,7 @@
 import Hero from '../components/hero/Hero.astro'
 import Header from '../components/header/Header.astro'
 import Logo from '../components/header/Logo.astro'
-import Subtitle from '../components/Subtitle.astro'
 import GridVideos from '../components/videos/GridVideos.astro'
-import Video from '../icons/Video.astro'
 import Container from '../layouts/Container.astro'
 import Layout from '../layouts/Layout.astro'
 import Menu from '../components/menu/Menu.astro'
@@ -24,7 +22,6 @@ import About from '../components/about/About.astro'
   <Hero />
   <main class="my-16 border-t border-gray-300 py-8">
     <Container>
-      <Subtitle section="videos"><Video w="30" h="30" /> Últimos videos</Subtitle>
       <GridVideos />
     </Container>
   </main>
