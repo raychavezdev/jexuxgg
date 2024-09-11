@@ -10,6 +10,19 @@ export default {
       gridTemplateColumns: {
         'auto-fill': 'repeat(auto-fill, minmax(280px, 1fr))',
       },
+      colors: {
+        primary: '#A98947',
+      },
+      keyframes: {
+        show: {
+          to: {
+            opacity: '1',
+          },
+        },
+      },
+      animation: {
+        show: 'show .5s .2s forwards',
+      },
     },
   },
   plugins: [],

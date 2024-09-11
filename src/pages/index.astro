@@ -8,6 +8,7 @@ import Video from '../icons/Video.astro'
 import Container from '../layouts/Container.astro'
 import Layout from '../layouts/Layout.astro'
 import Menu from '../components/menu/Menu.astro'
+import About from '../components/about/About.astro'
 // import { fetchVideos } from '../utils/fetchVideos.js'
 ---
 
@@ -21,13 +22,12 @@ import Menu from '../components/menu/Menu.astro'
     <Menu />
   </Header>
   <Hero />
-  <main>
+  <main class="my-16 border-t border-gray-300 py-8">
     <Container>
       <Subtitle section="videos"><Video w="30" h="30" /> Últimos videos</Subtitle>
       <GridVideos />
     </Container>
   </main>
+  <About />
   <script src="https://apis.google.com/js/platform.js"></script>
-
-  <div class="g-ytsubscribe" data-channelid="UCBoGhuGJ49FlvpegB7DQWjQ" data-layout="full" data-count="default"></div>
 </Layout>

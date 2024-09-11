@@ -1,0 +1,30 @@
+---
+import Container from '../../layouts/Container.astro'
+import Subtitle from '../Subtitle.astro'
+import Info from '../../icons/Info.astro'
+---
+
+<section class="my-8" id="about">
+  <Container>
+    <Subtitle><Info /> Acerca de</Subtitle>
+    <div class="flex flex-col-reverse items-center gap-4 lg:flex-row">
+      <div class="flex flex-[2] flex-col gap-1 text-center lg:text-left">
+        <p class="text-primary">Mi nombre es Jesús, obviamente xD.</p>
+        <p>
+          Este canal fue creado con la finalidad de ayudar a las personas a encontrar juegos nuevos en los distintos
+          tops que encontraremos por el canal, con varios géneros. <p>
+            También realizo reseñas para explorar más a fondo diferentes juegos entretenidos.
+          </p>
+          <p>
+            El <span class="text-primary">contenido es muy variado</span>, y estoy en proceso de aprendizaje, ya que, en
+            realidad, no suelo hablar mucho. Así que, en ocasiones, hablo despacio. No sé qué más poner aquí. Si les
+            gusta, <span class="text-primary">suscríbanse</span>."
+          </p>
+        </p>
+      </div>
+      <div class="w-auto bg-red-800">
+        <img class="h-auto w-40 rounded-md" src="avatar.jpg" alt="" />
+      </div>
+    </div>
+  </Container>
+</section>
