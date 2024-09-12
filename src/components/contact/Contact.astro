@@ -1,0 +1,35 @@
+---
+import Mail from '../../icons/Mail.astro'
+import At from '../../icons/socials/At.astro'
+import Discord from '../../icons/socials/Discord.astro'
+import FaceBook from '../../icons/socials/FaceBook.astro'
+import Instagram from '../../icons/socials/Instagram.astro'
+import Twitter from '../../icons/socials/Twitter.astro'
+import Container from '../../layouts/Container.astro'
+import Subtitle from '../Subtitle.astro'
+---
+
+<section id="contact" class="my-16 border-t border-gray-600 py-8">
+  <Container>
+    <Subtitle><Mail w="30" h="30" /> Contacto</Subtitle>
+    <div>
+      <div>
+        <a
+          class="inline-flex items-center rounded-xl border border-primary bg-gradient-to-l from-zinc-800 to-zinc-900 p-2"
+          href="mailto:aberestecorreo@gmail.com"><At w="40" h="40" /> Envíame un correo</a
+        >
+      </div>
+      <div>
+        <h3>Sígueme en mis redes sociales</h3>
+        <ul class="flex gap-4">
+          <li><a target="_blank" href="https://www.facebook.com/jexuxin"><FaceBook w="40" h="40" /></a></li>
+          <li><a target="_blank" href="https://www.instagram.com/jexuxin_op/"><Instagram w="40" h="40" /></a></li>
+          <li>
+            <a target="_blank" href="https://x.com/Jexux_GG?t=kaz6fThJKAbLDN6HG7mhIw&s=09"><Twitter w="40" h="40" /></a>
+          </li>
+          <li><a target="_blank" href="https://discord.com/invite/DUnMCWY2VY"><Discord w="40" h="40" /></a></li>
+        </ul>
+      </div>
+    </div>
+  </Container>
+</section>

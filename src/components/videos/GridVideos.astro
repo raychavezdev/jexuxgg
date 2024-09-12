@@ -1,14 +1,19 @@
 ---
 import Video from '../../icons/Video.astro'
+import Container from '../../layouts/Container.astro'
 import { items } from '../../utils/fetchVideosResult.js'
 import Subtitle from '../Subtitle.astro'
 import CardVideo from './CardVideo.astro'
 const videos = items
 ---
 
-<section id="videos">
-  <Subtitle><Video w="30" h="30" /> Últimos videos</Subtitle>
-  <ul class="grid grid-cols-auto-fill gap-4">
-    {videos.map((element: any) => <CardVideo video={element} />)}
-  </ul>
-</section>
+<main class="my-16 border-t border-gray-600 py-8">
+  <Container>
+    <section id="videos">
+      <Subtitle><Video w="30" h="30" /> Últimos videos</Subtitle>
+      <ul class="grid grid-cols-auto-fill gap-4">
+        {videos.map((element: any) => <CardVideo video={element} />)}
+      </ul>
+    </section>
+  </Container>
+</main>

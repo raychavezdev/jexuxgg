@@ -3,10 +3,10 @@ import Hero from '../components/hero/Hero.astro'
 import Header from '../components/header/Header.astro'
 import Logo from '../components/header/Logo.astro'
 import GridVideos from '../components/videos/GridVideos.astro'
-import Container from '../layouts/Container.astro'
 import Layout from '../layouts/Layout.astro'
 import Menu from '../components/menu/Menu.astro'
 import About from '../components/about/About.astro'
+import Contact from '../components/contact/Contact.astro'
 // import { fetchVideos } from '../utils/fetchVideos.js'
 ---
 
@@ -20,11 +20,8 @@ import About from '../components/about/About.astro'
     <Menu />
   </Header>
   <Hero />
-  <main class="my-16 border-t border-gray-300 py-8">
-    <Container>
-      <GridVideos />
-    </Container>
-  </main>
+  <GridVideos />
   <About />
+  <Contact />
   <script src="https://apis.google.com/js/platform.js"></script>
 </Layout>
