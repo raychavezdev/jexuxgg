@@ -1,0 +1,45 @@
+---
+import Discord from '../../icons/socials/Discord.astro'
+import FaceBook from '../../icons/socials/FaceBook.astro'
+import Instagram from '../../icons/socials/Instagram.astro'
+import Twitter from '../../icons/socials/Twitter.astro'
+import SocialItem from './SocialItem.astro'
+
+const SOCIALS = [
+  {
+    name: 'Facebook',
+    color: '#1877f2',
+    link: 'https://www.facebook.com/jexuxin',
+    icon: FaceBook,
+  },
+  {
+    name: 'Instagram',
+    color: '#5B51D8',
+    link: 'https://www.instagram.com/jexuxin_op/',
+    icon: Instagram,
+  },
+  {
+    name: 'Twitter',
+    color: '#00acee',
+    link: 'https://x.com/Jexux_GG?t=kaz6fThJKAbLDN6HG7mhIw&s=09',
+    icon: Twitter,
+  },
+  {
+    name: 'Discord',
+    color: '#7289da',
+    link: 'https://discord.com/invite/DUnMCWY2VY',
+    icon: Discord,
+  },
+]
+---
+
+<div class="text-center">
+  <h3 class="mb-4 mt-8 text-primary">Sígueme en mis redes sociales:</h3>
+  <!-- <h3 class="hover:text-[#1877f2]">sd</h3>
+  <h3 class="hover:text-[#5B51D8]">sd</h3>
+  <h3 class="hover:text-[#00acee]">sd</h3>
+  <h3 class="hover:text-[#7289da]">sd</h3> -->
+  <ul class="flex gap-4">
+    {SOCIALS.map((social) => <SocialItem {...social} />)}
+  </ul>
+</div>

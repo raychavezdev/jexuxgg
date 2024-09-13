@@ -13,15 +13,23 @@ export default {
       colors: {
         primary: '#A98947',
       },
+      backgroundSize: {
+        double: '200% 200%',
+      },
       keyframes: {
         show: {
           to: {
             opacity: '1',
           },
         },
+        gradientAnimation: {
+          '0%': { 'background-position': '0% 0%' },
+          '100%': { 'background-position': '50% 100%' },
+        },
       },
       animation: {
         show: 'show .5s .2s forwards',
+        moveGradient: 'gradientAnimation .2s forwards',
       },
     },
   },

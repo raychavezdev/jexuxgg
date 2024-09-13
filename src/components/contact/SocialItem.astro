@@ -1,0 +1,14 @@
+---
+const { name, color, link, icon: Icon } = Astro.props
+---
+
+<li>
+  <a
+    class={`transition-all hover:text-[${color}] flex flex-col items-center gap-1 hover:scale-110`}
+    target="_blank"
+    href={link}
+  >
+    <Icon w="40" h="40" />
+    <span class="text-sm transition-transform">{name}</span>
+  </a>
+</li>
