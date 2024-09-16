@@ -2,7 +2,7 @@ export async function fetchVideos() {
   try {
     const KEY = import.meta.env.KEY
     const ID = import.meta.env.ID
-    const TOTAL_RES = 9
+    const TOTAL_RES = 12
 
     const response = await fetch(
       'https://www.googleapis.com/youtube/v3/search?key=' +

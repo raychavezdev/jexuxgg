@@ -1,10 +1,11 @@
 ---
 import Video from '../../icons/Video.astro'
 import Container from '../../layouts/Container.astro'
-import { items } from '../../utils/fetchVideosResult.js'
 import Subtitle from '../Subtitle.astro'
 import CardVideo from './CardVideo.astro'
-const videos = items
+import { fetchVideos } from '../../utils/fetchVideos.js'
+const videos = await fetchVideos()
+console.log(videos + '////')
 ---
 
 <main class="my-16 border-t border-gray-600 py-8">
